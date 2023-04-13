@@ -54,11 +54,11 @@ open class UserServiceTest @Autowired constructor(
     @Test
     fun updateUserTest() {
         // given
-        val user = User("다영", 20)
+        val user = User("다영", 20, )
         userRepository.save(user)
 
         // when
-        userService.updateUserName(UserUpdateRequest(user.id, "다영1"))
+        userService.updateUserName(UserUpdateRequest(user.id!!, "다영1"))
 
         // then
         val result = userRepository.findById(user.id)
