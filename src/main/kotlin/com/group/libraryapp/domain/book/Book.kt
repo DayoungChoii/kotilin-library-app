@@ -8,6 +8,7 @@ import javax.persistence.Id
 @Entity
 class Book (
     val name : String,
+    val type : String,
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null
 ) {

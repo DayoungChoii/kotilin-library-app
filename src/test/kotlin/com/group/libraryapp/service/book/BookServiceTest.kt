@@ -2,6 +2,7 @@ package com.group.libraryapp.service.book
 
 import com.group.libraryapp.domain.book.Book
 import com.group.libraryapp.domain.book.BookRepository
+import com.group.libraryapp.service.book.BookService
 import com.group.libraryapp.domain.user.User
 import com.group.libraryapp.domain.user.UserRepository
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistory
@@ -87,7 +88,7 @@ class BookServiceTest @Autowired constructor(
         bookRepository.save(Book("연금술사"))
         val user = User("다영", null)
         userRepository.save(user)
-        userLoanHistoryRepository.saveAndFlush(UserLoanHistory(user, "연금술사", false))
+        userLoanHistoryRepository.save(UserLoanHistory(user, "연금술사", false))
 
         // when
         bookService.returnBook(BookReturnRequest("다영", "연금술사"))
