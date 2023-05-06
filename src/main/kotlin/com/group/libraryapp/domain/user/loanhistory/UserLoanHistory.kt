@@ -6,6 +6,7 @@ import javax.persistence.*
 @Entity
 class UserLoanHistory (
     @ManyToOne
+    @JoinColumn(name = "userId")
     val user: User,
     val bookName: String,
     @Enumerated(EnumType.STRING)
