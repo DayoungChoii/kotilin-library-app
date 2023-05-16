@@ -3,6 +3,7 @@ package com.group.libraryapp.domain.user
 import com.group.libraryapp.domain.user.QUser.user
 import com.group.libraryapp.domain.user.loanhistory.QUserLoanHistory.userLoanHistory
 import com.querydsl.jpa.impl.JPAQueryFactory
+import org.springframework.stereotype.Repository
 
 class UserRepositoryCustomImpl(
     private val queryFactory: JPAQueryFactory,
